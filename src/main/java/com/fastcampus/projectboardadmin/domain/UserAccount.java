@@ -103,7 +103,7 @@ public class UserAccount extends AuditingFields {
     this.getRoleTypes().add(roleType);
   }
 
-  public void addRoleType(Collection<RoleType> roleTypes) {
+  public void addRoleTypes(Collection<RoleType> roleTypes) {
     this.getRoleTypes().addAll(roleTypes);
   }
 

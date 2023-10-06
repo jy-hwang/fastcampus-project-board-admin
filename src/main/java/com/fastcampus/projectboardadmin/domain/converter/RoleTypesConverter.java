@@ -15,7 +15,7 @@ public class RoleTypesConverter implements AttributeConverter<Set<RoleType>, Str
   @Override
   public String convertToDatabaseColumn(Set<RoleType> attribute) {
 
-    return attribute.stream().map(RoleType::name).sorted().collect(Collectors.joining());
+    return attribute.stream().map(RoleType::name).sorted().collect(Collectors.joining(DELIMETER));
   }
 
   @Override
