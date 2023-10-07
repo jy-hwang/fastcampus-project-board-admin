@@ -1,6 +1,7 @@
 package com.fastcampus.projectboardadmin.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -12,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.Import;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 @DisplayName("View 컨트롤러 - 게시글 관리")
@@ -33,8 +35,9 @@ class ArticleManagementControllerTest {
     // When & Then
     mvc.perform(get("/management/articles"))
         .andExpect(status().isOk())
-        .andExpect(view().name("management/articles"))
-        .andExpect(model().attribute("articles", List.of()));
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
+        .andExpect(view().name("management/articles"));
+
 
   }
 
