@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -75,39 +74,48 @@ public record BoardAdminPrincipal(
         memo);
   }
 
-  @Override public String getUsername() {
+  @Override
+  public String getUsername() {
     return username;
   }
 
-  @Override public String getPassword() {
+  @Override
+  public String getPassword() {
     return password;
   }
 
-  @Override public Collection<? extends GrantedAuthority> getAuthorities() {
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
     return null;
   }
 
-  @Override public boolean isAccountNonExpired() {
+  @Override
+  public boolean isAccountNonExpired() {
     return true;
   }
 
-  @Override public boolean isAccountNonLocked() {
+  @Override
+  public boolean isAccountNonLocked() {
     return true;
   }
 
-  @Override public boolean isCredentialsNonExpired() {
+  @Override
+  public boolean isCredentialsNonExpired() {
     return true;
   }
 
-  @Override public boolean isEnabled() {
+  @Override
+  public boolean isEnabled() {
     return true;
   }
 
-  @Override public Map<String, Object> getAttributes() {
+  @Override
+  public Map<String, Object> getAttributes() {
     return oAuth2Attributes;
   }
 
-  @Override public String getName() {
+  @Override
+  public String getName() {
     return username;
   }
 
