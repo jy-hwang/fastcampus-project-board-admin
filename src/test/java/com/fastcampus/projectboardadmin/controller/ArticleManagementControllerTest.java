@@ -116,7 +116,6 @@ class ArticleManagementControllerTest {
   private UserAccountDto createUserAccountDto() {
     return UserAccountDto.of(
         "jackieTest",
-        "pw",
         Set.of(RoleType.ADMIN),
         "jackie-test@email.com",
         "jackie-test",
