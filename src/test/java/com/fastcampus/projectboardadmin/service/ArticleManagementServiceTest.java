@@ -5,7 +5,6 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
-import com.fastcampus.projectboardadmin.domain.constant.RoleType;
 import com.fastcampus.projectboardadmin.dto.ArticleDto;
 import com.fastcampus.projectboardadmin.dto.UserAccountDto;
 import com.fastcampus.projectboardadmin.dto.properties.ProjectProperties;
@@ -13,7 +12,6 @@ import com.fastcampus.projectboardadmin.dto.response.ArticleClientResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -47,7 +45,7 @@ class ArticleManagementServiceTest {
 
     @DisplayName("게시글 API를 호출하면, 게시글을 가져온다.")
     @Test
-    void given_when_then() {
+    void givenNothing_whenCallingArticles_thenReturnsArticlesList() {
       // Given
 
       // When
@@ -168,8 +166,6 @@ class ArticleManagementServiceTest {
     private UserAccountDto createUserAccountDto() {
       return UserAccountDto.of(
           "jackieHwang",
-          "password",
-          Set.of(RoleType.ADMIN),
           "jackieHwang@abc.com",
           "jackieHwang",
           "IamWeb-Programmer"
