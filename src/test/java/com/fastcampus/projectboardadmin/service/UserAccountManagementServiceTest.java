@@ -54,7 +54,6 @@ class UserAccountManagementServiceTest {
     }
   }
 
-
   @DisplayName("API mocking 테스트")
   @EnableConfigurationProperties(ProjectProperties.class)
   @AutoConfigureWebClient(registerRestTemplate = true)
@@ -144,7 +143,6 @@ class UserAccountManagementServiceTest {
       server.verify();
     }
   }
-
 
   private UserAccountDto createUserAccountDto(String userId, String nickname) {
     return UserAccountDto.of(
