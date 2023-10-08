@@ -1,6 +1,5 @@
 package com.fastcampus.projectboardadmin.dto.response;
 
-import com.fastcampus.projectboardadmin.dto.ArticleDto;
 import com.fastcampus.projectboardadmin.dto.UserAccountDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;

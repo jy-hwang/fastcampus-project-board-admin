@@ -1,7 +1,6 @@
 package com.fastcampus.projectboardadmin.service;
 
 import com.fastcampus.projectboardadmin.dto.ArticleCommentDto;
-import com.fastcampus.projectboardadmin.dto.ArticleDto;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
