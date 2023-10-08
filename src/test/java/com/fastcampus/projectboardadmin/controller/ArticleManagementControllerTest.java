@@ -107,16 +107,15 @@ class ArticleManagementControllerTest {
         content,
         null,
         LocalDateTime.now(),
-        "Uno",
+        "admin1",
         LocalDateTime.now(),
-        "Uno"
+        "admin1"
     );
   }
 
   private UserAccountDto createUserAccountDto() {
     return UserAccountDto.of(
         "jackieTest",
-        Set.of(RoleType.ADMIN),
         "jackie-test@email.com",
         "jackie-test",
         "test memo"
