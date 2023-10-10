@@ -3,9 +3,9 @@
 <head id="layout-head">
   <meta charset="UTF-8">
   <title>게시글 관리 페이지</title>
-  <link rel="stylesheet" href="/js/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="/js/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="/js/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link href="/js/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="/js/plugins/datatables-responsive/css/responsive.bootstrap4.min.css" rel="stylesheet">
+  <link href="/js/plugins/datatables-buttons/css/buttons.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -14,7 +14,7 @@
 
   <!-- Main content -->
   <main id="layout-main">
-    <table id="main-table" class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" id="main-table">
       <thead>
       <tr>
         <th>ID</th>
@@ -26,7 +26,7 @@
       <tbody>
       <tr>
         <td>1</td>
-        <td><a data-toggle="modal" data-target="#layout-modal">새 글</a></td>
+        <td><a data-target="#layout-modal" data-toggle="modal">새 글</a></td>
         <td>Admin1</td>
         <td>
           <time datetime="2023-09-28T00:00:00">2023-09-28 00:00:00</time>
@@ -34,7 +34,7 @@
       </tr>
       <tr>
         <td>2</td>
-        <td><a data-toggle="modal" data-target="#layout-modal">아무글</a></td>
+        <td><a data-target="#layout-modal" data-toggle="modal">아무글</a></td>
         <td>Admin2</td>
         <td>
           <time datetime="2023-09-29T00:00:00">2023-09-29 00:00:00</time>
@@ -42,7 +42,7 @@
       </tr>
       <tr>
         <td>3</td>
-        <td><a data-toggle="modal" data-target="#layout-modal">스프링 부트 블로그 정리</a></td>
+        <td><a data-target="#layout-modal" data-toggle="modal">스프링 부트 블로그 정리</a></td>
         <td>Admin3</td>
         <td>
           <time datetime="2023-09-30T00:00:00">2023-09-30 00:00:00</time>
