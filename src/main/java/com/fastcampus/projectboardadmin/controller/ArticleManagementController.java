@@ -35,7 +35,7 @@ public class ArticleManagementController {
   }
 
   @PostMapping("/{articleId}")
-  public String deleteArticle(@PathVariable Long articleId){
+  public String deleteArticle(@PathVariable Long articleId) {
     articleManagementService.deleteArticle(articleId);
     return "redirect:/management/articles";
   }
