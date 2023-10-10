@@ -22,6 +22,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 @DisplayName("컨트롤러 - 회원 관리")
@@ -37,6 +38,7 @@ class UserAccountManagementControllerTest {
     this.mvc = mvc;
   }
 
+  @WithMockUser(username = "tester", roles = "USER")
   @DisplayName(("[view][GET] 어드민 회원 페이지 - 정상 호출"))
   @Test
   void givenNothing_whenRequestingAdminMembersView_thenReturnsAdminMembersView() throws Exception {
@@ -50,12 +52,13 @@ class UserAccountManagementControllerTest {
 
   }
 
+  @WithMockUser(username = "tester", roles = "USER")
   @DisplayName("[data][GET] 회원 1개 - 정상 호출")
   @Test
   void givenUserAccountId_whenRequestingUserAccount_thenReturnsUserAccount() throws Exception {
     // Given
-    String userId = "uno";
-    UserAccountDto userAccountDto = createUserAccountDto(userId, "Admin1");
+    String userId = "user3";
+    UserAccountDto userAccountDto = createUserAccountDto(userId, "user3");
     given(userAccountManagementService.getUserAccount(userId)).willReturn(userAccountDto);
 
     // When & Then
@@ -67,11 +70,12 @@ class UserAccountManagementControllerTest {
     then(userAccountManagementService).should().getUserAccount(userId);
   }
 
+  @WithMockUser(username = "tester", roles = "MANAGER")
   @DisplayName("[view][POST] 회원 삭제 - 정상 호출")
   @Test
   void givenUserAccountId_whenRequestingDeletion_thenRedirectsToUserAccountManagementView() throws Exception {
     // Given
-    String userId = "uno";
+    String userId = "user3";
     willDoNothing().given(userAccountManagementService).deleteUserAccount(userId);
 
     // When & Then
