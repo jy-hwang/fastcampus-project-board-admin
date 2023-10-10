@@ -1,6 +1,5 @@
 package com.fastcampus.projectboardadmin.service;
 
-import com.fastcampus.projectboardadmin.dto.AdminAccountDto;
 import com.fastcampus.projectboardadmin.dto.ArticleCommentDto;
 import com.fastcampus.projectboardadmin.dto.properties.ProjectProperties;
 import com.fastcampus.projectboardadmin.dto.response.ArticleCommentClientResponse;

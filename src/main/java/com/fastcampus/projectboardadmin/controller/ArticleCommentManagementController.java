@@ -34,12 +34,12 @@ public class ArticleCommentManagementController {
 
   @ResponseBody
   @GetMapping("/{articleCommentId}")
-  public ArticleCommentResponse articleComment(@PathVariable Long articleCommentId){
+  public ArticleCommentResponse articleComment(@PathVariable Long articleCommentId) {
     return ArticleCommentResponse.of(articleCommentManagementService.getArticleComment(articleCommentId));
   }
 
   @PostMapping("/{articleCommentId}")
-  public String deleteArticleComment(@PathVariable Long articleCommentId){
+  public String deleteArticleComment(@PathVariable Long articleCommentId) {
     articleCommentManagementService.deleteArticleComment(articleCommentId);
     return "redirect:/management/article-comments";
   }
