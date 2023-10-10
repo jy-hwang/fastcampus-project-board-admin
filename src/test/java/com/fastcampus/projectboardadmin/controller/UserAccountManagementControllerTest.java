@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-@DisplayName("View 컨트롤러 - 회원 관리")
+@DisplayName("컨트롤러 - 회원 관리")
 @Import(TestSecurityConfig.class)
 @WebMvcTest(UserAccountManagementController.class)
 class UserAccountManagementControllerTest {

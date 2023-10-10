@@ -29,7 +29,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-@DisplayName("View 컨트롤러 - 어드민 회원")
+@DisplayName("컨트롤러 - 어드민 회원")
 @Import(SecurityConfig.class)
 @WebMvcTest(AdminAccountController.class)
 class AdminAccountControllerTest {

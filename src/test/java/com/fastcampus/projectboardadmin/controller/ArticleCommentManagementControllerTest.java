@@ -29,7 +29,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-@DisplayName("View 컨트롤러 - 댓글 관리")
+@DisplayName("컨트롤러 - 댓글 관리")
 @Import(TestSecurityConfig.class)
 @WebMvcTest(ArticleCommentManagementController.class)
 class ArticleCommentManagementControllerTest {
