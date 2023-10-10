@@ -82,7 +82,7 @@ class AdminAccountControllerTest {
   @Test
   void givenAuthorizedUser_whenDeletingAdminMember_thenDeletesAdminMember() throws Exception {
     // Given
-    String username = "uno";
+    String username = "admin1";
     willDoNothing().given(adminAccountService).deleteUser(username);
 
     // When & Then
