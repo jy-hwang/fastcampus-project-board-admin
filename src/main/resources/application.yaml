@@ -1,10 +1,5 @@
 debug: false
-management:
-  endpoints:
-    web:
-      exposure:
-        include:
-          - "*"
+management.endpoints.web.exposure.include: "*"
 
 logging:
   level:
@@ -44,7 +39,7 @@ spring:
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
 
-project.board.url : http://localhost:9090
+project.board.url: http://localhost:9090
 ---
 spring:
   datasource:
