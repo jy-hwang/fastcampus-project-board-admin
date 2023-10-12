@@ -2,7 +2,7 @@
 <thlogic>
   <attr sel="#admin-logo-link" th:href="@{/}"/>
   <!-- TODO : 유저가 등록한 nickname 이 보여질 수 있게 수정할 수 있을까? -->
-  <attr sel="#user-profile" th:href="@{#}" sec:authentication="name" />
+  <attr sel="#user-profile" th:href="@{#}" sec:authentication="name"/>
   <attr sel="#management-category" th:classappend="${#request.requestURI.startsWith('/management')} ? 'active'"/>
   <attr
     sel="#article-management"
@@ -25,4 +25,6 @@
     th:classappend="${#request.requestURI.equals('/admin/members')} ? 'active'"
     th:href="@{/admin/members}"
   />
+
+  <attr sel="#page-load-count" th:text="${pageLoadCount}"/>
 </thlogic>
