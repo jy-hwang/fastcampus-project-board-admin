@@ -11,7 +11,7 @@ $(document).ready(() => {
     $('#dark-mode-checkbox').prop('checked', true);
   }
 })
-$('#dark-mode-checkbox').on('click', function() {
+$('#dark-mode-checkbox').on('click', function () {
   if ($(this).is(':checked')) {
     $('body').addClass('dark-mode');
     $('header nav')
