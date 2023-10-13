@@ -1,0 +1,46 @@
+
+logging:
+  level:
+    com.fastcampus.projectboard : debug
+    org.springframework.web.servlet : debug
+    org.hibernate.type.descriptor.sql.BasicBinder : trace
+spring:
+  datasource:
+    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    open-in-view: false
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate.format_sql: true
+      hibernate.default_batch_fetch_size: 100
+  sql.init.mode: embedded
+  data.rest:
+    base-path: /api
+    detection-strategy: annotated
+  thymeleaf3.decoupled-logic: true
+  devtools:
+    livereload:
+      enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: ${KAKAO_OAUTH_CLIENT_ID}
+            client-secret: ${KAKAO_OAUTH_CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/kakao"
+            client-authentication-method: POST
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
+
+project.board.url: ${PROJECT_BOARD_URL}
