@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.fastcampus'
-version = '0.0.1-SNAPSHOT'
+version = 'v1.0'
 
 java {
     sourceCompatibility = '17'
@@ -39,6 +39,7 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.2.0'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -47,4 +48,11 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+//// cloudtype 설정
+jar{
+    manifest {
+        attributes('Main-Class': 'com.fastcampus.projectboardadmin.FastcampusProjectBoardAdminApplication')
+    }
 }
