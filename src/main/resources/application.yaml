@@ -1,26 +1,23 @@
 debug: false
-management:
-  endpoints:
-    web:
-      exposure:
-        include:
-          - "*"
+management.endpoints.web.exposure.include: "*"
 
 logging:
   level:
     com.fastcampus.projectboardadmin: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.springframework.web.client.RestTemplate: debug
+
 spring:
   jpa:
     open-in-view: false
     defer-datasource-initialization: true
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: none
     show-sql: true
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-  sql.init.mode: always
+  sql.init.mode: never
   thymeleaf3.decoupled-logic: true
   devtools:
     livereload:
@@ -42,6 +39,7 @@ spring:
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
 
+project.board.url: http://localhost:9090
 ---
 spring:
   datasource:
