@@ -1,6 +1,7 @@
 $(document).ready(() => {
   $('#todo-button').click(() => {
-    const text = $('#todo-input').val();
+    const inputTodo = $('#todo-input');
+    const text = inputTodo.val();
     const todoElement = `
         <li>
           <span class="handle">
@@ -20,15 +21,16 @@ $(document).ready(() => {
         `;
 
     $('ul.todo-list').append(todoElement);
+    inputTodo.val("");
   });
 
   $('#todo-input').keyup((event) => {
-    if(event.keyCode === 13) {
+    if (event.keyCode === 13) {
       $("#todo-button").click();
     }
   });
 
-  $(document).on('dblclick','ul.todo-list li', function() {
+  $(document).on('dblclick', 'ul.todo-list li', function () {
     $(this).toggleClass('done').fadeOut('slow');
   });
 });
